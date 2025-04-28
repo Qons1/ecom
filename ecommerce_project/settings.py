@@ -25,7 +25,16 @@ SECRET_KEY = 'django-insecure-fhhy=4yo8_tjzkofl*mw!e7)sikhwsoekj#ior%&s_es0qgzc0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
+
+# Environment variables
+SECRET_KEY = os.getenv('0xh7#osj9rqd3vd=gy8stx(*zhh)v&1$dvxw)9i(u)mqhyz=v$', "fallback_dev_secret")
+DEBUG = False
+ALLOWED_HOSTS = ['https://ecom-0q3p.onrender.com', 'localhost', '127.0.0.1']
+
+# Add your environment variables for MongoDB and OpenAI
+OPENAI_KEY = os.getenv("daba2bfc11b38362167ef1634b859e6a")
+MONGO_URI = os.getenv('mongodb+srv://storeadmin:admin12345@cluster0.hzdvdne.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
 
 # Application definition
